@@ -1,0 +1,71 @@
+body {
+  background-color: #689b99;
+  font-family: "Montserrat", sans-serif;
+}
+.quadrado {
+  background-color: #689b99;
+  color: #eef4ed;
+  width: 50%;
+  height: 350px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.senha {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.parte_cima {
+  font-size: 25px;
+  background-color: #689b99;
+  color: white;
+  width: 100%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.botoes {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  background-color: transparent;
+}
+
+.button {
+  background-color: white;
+  color: black;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 9px;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 15px 50px;
+  transition: 0.4x;
+  margin: 5px;
+}
+
+.button:hover {
+  background: orange;
+  color: white;
+  letter-spacing: 4px;
+  cursor: pointer;
+}
