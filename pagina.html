@@ -12,6 +12,12 @@
   </head>
   <body>
     <h1 class="parte_cima">CHAMADA DE SENHAS</h1>
+
+    <div class="painel-senhas">
+      <h4>Senhas na fila:</h4>
+      <ul id="listaSenhas"></ul>
+  </div>
+  
     <div class="quadrado">
       <h2>SENHA</h2>
       <h3 class="senha">Nenhuma senha na fila</h3>
@@ -21,7 +27,7 @@
       <button class="button" id="botaoSenhaNormal" onclick="gerarSenha()">
         gerar Senha normal
       </button>
-      <button class="button">Gerar Senha preferencial</button>
+      <button class="button" id="botaoSenhaPreferencial">Gerar Senha preferencial</button>
       <button class="button" id="chamarProximaSenha">
         Chamar Proxima senha
       </button>

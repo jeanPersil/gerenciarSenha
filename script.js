@@ -1,10 +1,63 @@
 let senhaNormal = 0;
-let filasSenhas = [];
+let senhaPreferencial = 0;
+let filaNormal = [];
+let filaPreferencial = [];
 
 document.getElementById("botaoSenhaNormal").onclick = () => {
   senhaNormal++;
-  novaSenha = `N - ${senhaNormal}`;
-  filasSenhas.push(novaSenha);
-  document.querySelector(".senha").textContent = novaSenha;
-  console.log(filasSenhas.length);
+  let novaSenha = `N - ${senhaNormal}`;
+  filaNormal.push(novaSenha);
+  atualizarDisplay();
 };
+
+document.getElementById("botaoSenhaPreferencial").onclick = () => {
+  senhaPreferencial++;
+  let novaSenha = `P - ${senhaPreferencial}`;
+  filaPreferencial.push(novaSenha);
+  atualizarDisplay();
+};
+
+document.getElementById("chamarProximaSenha").onclick = () => {
+  if (filaPreferencial.length > 0) {
+    filaPreferencial.shift();
+    atualizarDisplay();
+  } else if (filaNormal.length > 0) {
+    filaNormal.shift();
+    atualizarDisplay();
+  } else {
+    alert("Não ha senhas na fila");
+    return;
+  }
+};
+
+function atualizarDisplay() {
+  if (filaPreferencial.length > 0) {
+    document.querySelector(".senha").textContent = filaPreferencial[0];
+  } else if (filaNormal.length > 0) {
+    document.querySelector(".senha").textContent = filaNormal[0];
+  } else {
+    document.querySelector(".senha").textContent = "Nenhuma senha na fila";
+  }
+  atualizarLista();
+}
+
+function atualizarLista() {
+  let listaSenhas = document.getElementById("listaSenhas");
+
+  listaSenhas.innerHTML = "";
+
+  let todasSenhas = [...filaPreferencial, ...filaNormal];
+
+  todasSenhas.forEach((senha) => {
+    let li = document.createElement("li");
+    li.textContent = senha;
+    if (li.textContent.startsWith("P")) {
+      li.style.backgroundColor = "red";
+      li.style.color = "white";
+    } else {
+      li.style.backgroundColor = "blue";
+      li.style.color = "white";
+    }
+    listaSenhas.appendChild(li);
+  });
+}
