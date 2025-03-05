@@ -31,12 +31,16 @@ document.getElementById("chamarProximaSenha").onclick = () => {
 };
 
 function atualizarDisplay() {
+  let senha = document.querySelector(".senha");
   if (filaPreferencial.length > 0) {
-    document.querySelector(".senha").textContent = filaPreferencial[0];
+    senha.style.color = "red";
+    senha.textContent = filaPreferencial[0];
   } else if (filaNormal.length > 0) {
-    document.querySelector(".senha").textContent = filaNormal[0];
+    senha.style.color = "blue";
+    senha.textContent = filaNormal[0];
   } else {
     document.querySelector(".senha").textContent = "Nenhuma senha na fila";
+    senha.style.color = "black";
   }
   atualizarLista();
 }

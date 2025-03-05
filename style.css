@@ -1,25 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  grid-area: cabecalho;
+}
+
+main {
+  grid-area: conteudo;
+  display: grid;
+  grid-template-columns:  1fr 150px;
+  grid-template-rows: 150px 1fr 50px;
+  gap: 10px;
+  padding: 5px;
+  position: relative;
+}
+
 body {
-  background-color: #8da9c4; /* Cor 2 - Fundo da página */
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas:
+    "cabecalho"
+    "conteudo";
+  box-sizing: border-box;
+  background-color: #8da9c4;
   font-family: "Montserrat", sans-serif;
 }
 
+.cabecalho {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+  background-color: #0b2545;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: solid black;
+  border-radius: 15px;
+}
+
+.cabecalho h1 {
+  color: white;
+  font-size: 30px;
+}
+
+.painel-senhas {
+  background-color: #0b2545;
+  grid-column: 2/4;
+  grid-row: 1 / 4;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.painel-senhas h4 {
+  color: white;
+}
+
+.painel-senhas ul {
+  list-style: none;
+}
+
 .quadrado {
-  background-color: #f0ebd8; 
-  color: #0b2545; 
+  grid-column: 1/3;
+  grid-row: 2/4;
+  background-color: #f0ebd8;
+  color: #0b2545;
   width: 50%;
   height: 350px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: black;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  border: solid 5px black;
+  border-radius: 10px;
+  position: absolute; 
+  top:35%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 5px;
+  align-items: center; 
+
 }
 
 .senha {
@@ -27,28 +89,14 @@ body {
   font-weight: bold;
 }
 
-.parte_cima {
-  font-size: 25px;
-  background-color: #0b2545; 
-  color: white;
-  width: 100%;
-  border-width: 5px;
-  border-style: solid;
-  border-color: black;
+.botoes {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  background-color: aliceblue;
   display: flex;
-  flex-direction: column;
+
   justify-content: center;
   align-items: center;
-}
-
-.botoes {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-  background-color: transparent;
 }
 
 .button {
@@ -60,7 +108,7 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   padding: 15px 50px;
-  transition: 0.4x;
+  transition: ease 0.5s;
   margin: 5px;
   border: none;
   border-radius: 5px;
@@ -69,32 +117,7 @@ body {
 .button:hover {
   background: orange;
   color: white;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   cursor: pointer;
 }
 
-.painel-senhas {
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  background-color: #f0ebd8; 
-  color: #0b2545; 
-  height: 500px;
-  text-align: center;
-  border: solid;
-  border-color: #0b2545; 
-  overflow-y: auto;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-
-.painel-senhas li {
-  background-color: #8da9c4; 
-  color: white;
-  padding: 5px;
-  margin: 5px 0;
-  border-radius: 5px;
-  list-style: none;
-}

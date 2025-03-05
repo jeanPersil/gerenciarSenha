@@ -11,27 +11,33 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1 class="parte_cima">CHAMADA DE SENHAS</h1>
+    <header class="cabecalho">
+      <h1>CHAMADA DE SENHAS</h1>
+    </header>
 
-    <div class="painel-senhas">
-      <h4>Senhas na fila:</h4>
-      <ul id="listaSenhas"></ul>
-  </div>
-  
-    <div class="quadrado">
-      <h2>SENHA</h2>
-      <h3 class="senha">Nenhuma senha na fila</h3>
-    </div>
+    <main>
+      <div class="painel-senhas">
+        <h4>Senhas na fila:</h4>
+        <ul id="listaSenhas"></ul>
+      </div>
 
-    <div class="botoes">
-      <button class="button" id="botaoSenhaNormal" onclick="gerarSenha()">
-        gerar Senha normal
-      </button>
-      <button class="button" id="botaoSenhaPreferencial">Gerar Senha preferencial</button>
-      <button class="button" id="chamarProximaSenha">
-        Chamar Proxima senha
-      </button>
-    </div>
+      <div class="quadrado">
+        <h2>SENHA</h2>
+        <h3 class="senha">Nenhuma senha na fila</h3>
+      </div>
+
+      <div class="botoes">
+        <button class="button" id="botaoSenhaNormal" onclick="gerarSenha()">
+          gerar Senha normal
+        </button>
+        <button class="button" id="botaoSenhaPreferencial">
+          Gerar Senha preferencial
+        </button>
+        <button class="button" id="chamarProximaSenha">
+          Chamar Proxima senha
+        </button>
+      </div>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
